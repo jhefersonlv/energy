@@ -650,6 +650,202 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Sales Section */
+.sales-section {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.sales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.sales-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.sales-card:hover {
+    transform: translateY(-10px);
+}
+
+.sales-img {
+    position: relative;
+    height: 250px;
+}
+
+.sales-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sales-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--emergency-yellow);
+    color: var(--black);
+    padding: 5px 15px;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.sales-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sales-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.sales-content p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    position: relative;
+    transform: translateY(-20px) scale(0.95);
+    transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: var(--industrial-gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--emergency-yellow);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modal-header h3 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.btu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btu-grid .btn-btu:last-child {
+    grid-column: 1 / -1;
+}
+
+.btn-btu {
+    background: var(--white);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.btn-btu:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.modal-footer {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+.modal-footer p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.btn-help {
+    background: var(--industrial-gray-light);
+    color: var(--primary-blue);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.btn-help:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+.w-100 {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .header nav ul {
         display: none;

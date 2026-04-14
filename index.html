@@ -8,15 +8,236 @@
     <link rel="icon" type="image/png" href="assets/image/favicon.png">
     <meta name="description" content="Especialista em soluções elétricas e ar-condicionado industrial, predial e comercial. Confiança em cada conexão com conformidade NR10 e NR12.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+
+    <!-- ===================== MODAL ===================== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="modal-header-info">
+                    <h2 class="modal-title" id="modalTitle">O que você precisa?</h2>
+                    <p class="modal-subtitle" id="modalSubtitle">Selecione uma opção abaixo para começar</p>
+                </div>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+                <div class="modal-steps-indicator" id="stepsIndicator"></div>
+            </div>
+
+            <!-- STEP 1: TIPO DE SERVIÇO -->
+            <div class="modal-step active" id="step1">
+                <p class="modal-step-label"><span class="step-dot">1</span> Qual serviço você precisa?</p>
+                <div class="modal-service-grid">
+                    <label class="modal-option" data-ac="false">
+                        <input type="radio" name="servico" value="Elaboração de Projeto Elétrico">
+                        <div class="modal-option-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <span>Projeto Elétrico</span>
+                    </label>
+                    <label class="modal-option" data-ac="false">
+                        <input type="radio" name="servico" value="Adequação NR10 / NR12">
+                        <div class="modal-option-icon"><i class="fas fa-shield-alt"></i></div>
+                        <span>NR10 / NR12</span>
+                    </label>
+                    <label class="modal-option" data-ac="false">
+                        <input type="radio" name="servico" value="Manutenção Elétrica Preventiva ou Corretiva">
+                        <div class="modal-option-icon"><i class="fas fa-tools"></i></div>
+                        <span>Manutenção Elétrica</span>
+                    </label>
+                    <label class="modal-option" data-ac="false">
+                        <input type="radio" name="servico" value="Projeto e Instalação de Iluminação">
+                        <div class="modal-option-icon"><i class="fas fa-lightbulb"></i></div>
+                        <span>Iluminação</span>
+                    </label>
+                    <label class="modal-option" data-ac="install">
+                        <input type="radio" name="servico" value="Instalação de Ar-Condicionado">
+                        <div class="modal-option-icon"><i class="fas fa-wind"></i></div>
+                        <span>Instalar Ar-Condicionado</span>
+                    </label>
+                    <label class="modal-option" data-ac="true">
+                        <input type="radio" name="servico" value="Manutenção de Ar-Condicionado">
+                        <div class="modal-option-icon"><i class="fas fa-calendar-check"></i></div>
+                        <span>Manutenção de AC</span>
+                    </label>
+                    <label class="modal-option" data-ac="true">
+                        <input type="radio" name="servico" value="Higienização de Ar-Condicionado">
+                        <div class="modal-option-icon"><i class="fas fa-spray-can"></i></div>
+                        <span>Higienização de AC</span>
+                    </label>
+                    <label class="modal-option" data-ac="false">
+                        <input type="radio" name="servico" value="Outro serviço">
+                        <div class="modal-option-icon"><i class="fas fa-ellipsis-h"></i></div>
+                        <span>Outro</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- STEP 1B: VOCÊ JÁ TEM UM APARELHO? (apenas Instalação de AC) -->
+            <div class="modal-step" id="step1b">
+                <div class="has-ac-question">
+                    <div class="has-ac-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <p class="modal-step-label" style="text-align:center; font-size:1.1rem;">Você já tem um aparelho de ar-condicionado?</p>
+                    <p class="modal-step-hint" style="text-align:center;">Isso nos ajuda a personalizar o seu orçamento.</p>
+                    <div class="has-ac-options">
+                        <button class="has-ac-btn" id="btnTemAC" data-has="sim">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sim, já tenho</span>
+                            <small>Quero instalar meu aparelho</small>
+                        </button>
+                        <button class="has-ac-btn" id="btnNaoTemAC" data-has="nao">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Não tenho ainda</span>
+                            <small>Quero comprar + instalar</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: MARCA DO SEU AR (quando usuário tem aparelho) -->
+            <div class="modal-step" id="step2">
+                <p class="modal-step-label"><span class="step-dot">2</span> Qual a marca do seu ar?</p>
+                <div class="modal-brand-grid">
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Daikin">
+                        <img src="assets/image/daikin.png" alt="Daikin">
+                        <span>Daikin</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="LG">
+                        <img src="assets/image/lg.png" alt="LG">
+                        <span>LG</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Electrolux">
+                        <div class="modal-brand-icon-text">Electrolux</div>
+                        <span>Electrolux</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Samsung">
+                        <div class="modal-brand-icon-text">Samsung</div>
+                        <span>Samsung</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Midea">
+                        <div class="modal-brand-icon-text">Midea</div>
+                        <span>Midea</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Philco">
+                        <div class="modal-brand-icon-text">Philco</div>
+                        <span>Philco</span>
+                    </label>
+                    <label class="modal-brand-card">
+                        <input type="radio" name="marca" value="Carrier">
+                        <div class="modal-brand-icon-text">Carrier</div>
+                        <span>Carrier</span>
+                    </label>
+                    <label class="modal-brand-card modal-brand-neutral">
+                        <input type="radio" name="marca" value="Nenhuma das anteriores">
+                        <i class="fas fa-question-circle" style="font-size:2rem; color: var(--industrial-gray);"></i>
+                        <span>Nenhuma das anteriores</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- STEP 3: CAPACIDADE (apenas AC) -->
+            <div class="modal-step" id="step3">
+                <p class="modal-step-label"><span class="step-dot">3</span> Capacidade (BTUs)</p>
+                <p class="modal-step-hint">Não sabe o BTU? Selecione pela metragem do ambiente.</p>
+                <div class="modal-btu-grid">
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="9.000 BTUs (até 15m²)">
+                        <span class="btu-value">9.000</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">Até 15m²</span>
+                    </label>
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="12.000 BTUs (15 a 20m²)">
+                        <span class="btu-value">12.000</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">15 a 20m²</span>
+                    </label>
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="18.000 BTUs (20 a 30m²)">
+                        <span class="btu-value">18.000</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">20 a 30m²</span>
+                    </label>
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="24.000 BTUs (30 a 40m²)">
+                        <span class="btu-value">24.000</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">30 a 40m²</span>
+                    </label>
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="36.000 BTUs (40 a 60m²)">
+                        <span class="btu-value">36.000</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">40 a 60m²</span>
+                    </label>
+                    <label class="modal-btu-card">
+                        <input type="radio" name="btu" value="60.000+ BTUs (acima de 60m²)">
+                        <span class="btu-value">60.000+</span>
+                        <span class="btu-unit">BTUs</span>
+                        <span class="btu-area">Acima de 60m²</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- STEP 4: TIPO DE EQUIPAMENTO (apenas AC) -->
+            <div class="modal-step" id="step4">
+                <p class="modal-step-label"><span class="step-dot">4</span> Tipo de equipamento</p>
+                <div class="modal-type-grid">
+                    <label class="modal-type-card">
+                        <input type="radio" name="tipo" value="Split Convencional">
+                        <i class="fas fa-wind"></i>
+                        <span>Split Convencional</span>
+                    </label>
+                    <label class="modal-type-card">
+                        <input type="radio" name="tipo" value="Split Inverter">
+                        <i class="fas fa-leaf"></i>
+                        <span>Split Inverter</span>
+                        <small>Mais econômico</small>
+                    </label>
+                    <label class="modal-type-card">
+                        <input type="radio" name="tipo" value="Cassete (teto)">
+                        <i class="fas fa-th"></i>
+                        <span>Cassete (teto)</span>
+                    </label>
+                    <label class="modal-type-card">
+                        <input type="radio" name="tipo" value="Piso-Teto">
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <span>Piso-Teto</span>
+                    </label>
+                    <label class="modal-type-card">
+                        <input type="radio" name="tipo" value="Industrial / VRF">
+                        <i class="fas fa-industry"></i>
+                        <span>Industrial / VRF</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="btnVoltar" style="display:none;">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                <button class="btn btn-primary" id="btnProximo">
+                    Próximo <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-whatsapp" id="btnEnviar" style="display:none;">
+                    <i class="fab fa-whatsapp"></i> Enviar para WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ===================== FIM MODAL ===================== -->
+
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="assets/image/logo.png" alt="">
+                <img src="assets/image/logo.png" alt="Energy">
             </div>
             <ul class="menu">
                 <li><a href="#home">Home</a></li>
@@ -24,31 +245,31 @@
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#contact">Contato</a></li>
+                <li><a href="#" class="nav-cta open-modal">Solicitar Serviço</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section id="home" class="hero">
         <div class="video-bg">
-            <video autoplay muted loop playsinline poster="imagem-de-fallback.jpg">
+            <video autoplay muted loop playsinline poster="assets/image/empresario.jpeg">
                 <source src="assets/image/video_bg.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
             </video>
         </div>
-
         <div class="hero-content">
             <h1>CONFIANÇA EM CADA CONEXÃO</h1>
             <p>Soluções em Elétrica e Ar-Condicionado para Indústrias, Comércios e Condomínios.</p>
-            <a href="https://wa.me/5511947012417" target="_blank" class="btn btn-primary">Solicitar Orçamento
-                Técnico</a>
+            <button class="btn btn-primary open-modal">Solicitar meu Serviço</button>
         </div>
     </section>
 
+    <!-- QUEM SOMOS -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="assets/image/empresario.jpeg" alt="Equipe Técnica">
+                    <img src="assets/image/empresario.jpeg" alt="Equipe Técnica Energy">
                 </div>
                 <div class="about-text">
                     <div class="section-title" style="text-align: left;">
@@ -66,6 +287,7 @@
         </div>
     </section>
 
+    <!-- CULTURA -->
     <section class="culture">
         <div class="container border-container">
             <div class="section-title">
@@ -76,8 +298,7 @@
                 <div class="culture-card">
                     <i class="fas fa-lightbulb"></i>
                     <h3>Missão</h3>
-                    <p>Prover soluções inovadoras, eficientes e personalizadas para conforto e segurança dos nossos
-                        clientes.</p>
+                    <p>Prover soluções inovadoras, eficientes e personalizadas para conforto e segurança dos nossos clientes.</p>
                 </div>
                 <div class="culture-card">
                     <i class="fas fa-eye"></i>
@@ -93,6 +314,7 @@
         </div>
     </section>
 
+    <!-- SERVIÇOS -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
@@ -103,49 +325,56 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
                     <h3>Elaboração de Projetos Elétricos e Ar-Condicionado</h3>
-                    <p>Desenvolvimento detalhado de sistemas elétricos e de climatização, focados em eficiência e
-                        economia.</p>
+                    <p>Desenvolvimento detalhado de sistemas elétricos e de climatização, focados em eficiência e economia.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Projetos e Execução para Adequação NR10 e NR12</h3>
                     <p>Compliance total e segurança do trabalho para painéis elétricos e máquinas industriais.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-tools"></i></div>
                     <h3>Manutenção Preventiva e Corretiva</h3>
                     <p>Garantia de continuidade operacional com intervenções técnicas precisas e rápidas.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Iluminação Interna e Externa</h3>
-                    <p>Projetos luminotécnicos de alta performance para valorização de ambientes e redução de custos.
-                    </p>
+                    <p>Projetos luminotécnicos de alta performance para valorização de ambientes e redução de custos.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-building"></i></div>
                     <h3>Soluções Personalizadas por Obra</h3>
                     <p>Atendimento sob medida para necessidades específicas de cada empreendimento ou retrofitting.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-wind"></i></div>
                     <h3>Rede de Climatização de Ambiente</h3>
                     <p>Higienização, instalação e manutenção completa de sistemas de ar-condicionado e ventilação.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-industry"></i></div>
                     <h3>Iluminação Industrial</h3>
                     <p>Soluções robustas para grandes galpões, áreas fabris e ambientes de alta exigência.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-cogs"></i></div>
                     <h3>Execução e Montagem Personalizada</h3>
                     <p>Infraestrutura dedicada e montagem técnica rigorosa de acordo com seu projeto.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- DIFERENCIAIS -->
     <section class="differences">
         <div class="container">
             <div class="section-title">
@@ -156,7 +385,7 @@
                 <div class="diff-item">
                     <i class="fas fa-check-circle"></i>
                     <div class="diff-content">
-                        <h4>Atendimento Técnica Premium</h4>
+                        <h4>Atendimento Técnico Premium</h4>
                         <p>Engenharia dedicada para cada conexão do seu projeto.</p>
                     </div>
                 </div>
@@ -178,6 +407,7 @@
         </div>
     </section>
 
+    <!-- SEGMENTOS -->
     <section class="industries">
         <div class="container">
             <div class="section-title">
@@ -186,24 +416,21 @@
             </div>
             <div class="industry-grid">
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800"
-                        alt="Industrial">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800" alt="Industrial">
                     <div class="industry-content">
                         <h3>Industrial</h3>
                         <p>Linhas de produção, painéis BT/MT e manutenção de infraestrutura crítica.</p>
                     </div>
                 </div>
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
-                        alt="Comercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Comercial">
                     <div class="industry-content">
                         <h3>Comercial</h3>
                         <p>Sistemas de climatização central, iluminação de destaque e eficiência energética.</p>
                     </div>
                 </div>
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
-                        alt="Predial">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="Predial">
                     <div class="industry-content">
                         <h3>Predial</h3>
                         <p>Manutenção técnica para condomínios, centros logísticos e edifícios corporativos.</p>
@@ -213,6 +440,7 @@
         </div>
     </section>
 
+    <!-- PROCESSO -->
     <section class="process">
         <div class="container">
             <div class="section-title">
@@ -243,52 +471,70 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        <div class="section-title">
-            <h2>Galeria de Projetos</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item-full">
-                <h3>Higienização de Ar Condicionado</h3>
-                <div class="comparison-container">
-                    <div class="comparison-item">
-                        <span>ANTES</span>
-                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=600"
-                            alt="Sujeira no Ar">
-                    </div>
-                    <div class="comparison-item">
-                        <span>DEPOIS</span>
-                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=600"
-                            alt="Ar Limpo">
-                    </div>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-banner-content">
+                <div>
+                    <h2>Pronto para resolver sua demanda?</h2>
+                    <p>Solicite seu orçamento em menos de 2 minutos direto pelo WhatsApp.</p>
                 </div>
-            </div>
-            <div class="gallery-item-full">
-                <h3>Montagem de Painel Industrial</h3>
-                <div class="comparison-container">
-                    <div class="comparison-item">
-                        <span>ANTES</span>
-                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=600"
-                            alt="Painel Antigo">
-                    </div>
-                    <div class="comparison-item">
-                        <span>DEPOIS</span>
-                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=600"
-                            alt="Painel Novo">
-                    </div>
-                </div>
+                <button class="btn btn-primary open-modal">
+                    Solicitar meu Serviço <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
-    </div>
     </section>
 
+    <!-- GALERIA DE PROJETOS -->
+    <section id="projects" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projetos Realizados</h2>
+                <div class="divider"></div>
+                <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">Alguns dos trabalhos entregues com excelência técnica</p>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-card-icon"><i class="fas fa-wind"></i></div>
+                    <h3>Higienização de Ar-Condicionado</h3>
+                    <p>Limpeza técnica completa de unidades evaporadoras e condensadoras em ambiente comercial, com emissão de laudo de conformidade.</p>
+                    <span class="project-tag">Climatização</span>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Montagem de Painel Elétrico Industrial</h3>
+                    <p>Projeto e montagem de painel de comando com adequação NR12 para indústria de grande porte, garantindo segurança total aos operadores.</p>
+                    <span class="project-tag">NR12 · Industrial</span>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Retrofit de Iluminação Comercial</h3>
+                    <p>Substituição completa do sistema de iluminação de loja por LED de alta eficiência, reduzindo o consumo energético em mais de 40%.</p>
+                    <span class="project-tag">Eficiência Energética</span>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Adequação NR10 — Subestação</h3>
+                    <p>Levantamento de riscos e adequação completa de subestação de média tensão com emissão de laudo técnico assinado por engenheiro.</p>
+                    <span class="project-tag">NR10 · Segurança</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn btn-primary open-modal">
+                    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Solicitar meu Serviço
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES E PARCEIROS -->
     <section class="logos-section">
         <div class="container">
-            <h3 style="margin-bottom: 20px; color: var(--industrial-gray);">Clientes ja atendidos</h3>
+            <h3 style="margin-bottom: 20px; color: var(--industrial-gray);">Clientes já atendidos</h3>
             <div class="logos-slider">
                 <div class="logos-track">
-                    <!-- MOVEPACK, PRADA, Motel ENJOY, PAVConsult, ENGRENA Brasil, ERGAZI e TOTH Engenharia -->
                     <span><img src="assets/image/movepack.png" alt="MOVEPACK"></span>
                     <span><img src="assets/image/prada.png" alt="PRADA"></span>
                     <span><img src="assets/image/enjoy.svg" alt="Motel ENJOY"></span>
@@ -296,7 +542,6 @@
                     <span><img src="assets/image/Logo-ENGRENA-Brasil-1024x299.png" alt="ENGRENA Brasil"></span>
                     <span><img src="assets/image/ergazi.png" alt="ERGAZI"></span>
                     <span><img src="assets/image/toth.png" alt="TOTH Engenharia"></span>
-                    <!-- Duplicate for infinite scroll -->
                     <span><img src="assets/image/movepack.png" alt="MOVEPACK"></span>
                     <span><img src="assets/image/prada.png" alt="PRADA"></span>
                     <span><img src="assets/image/enjoy.svg" alt="Motel ENJOY"></span>
@@ -306,12 +551,9 @@
                     <span><img src="assets/image/toth.png" alt="TOTH Engenharia"></span>
                 </div>
             </div>
-
-            <h3 style="margin-top: 50px; margin-bottom: 20px; color: var(--industrial-gray);">Credenciados & Parceiros
-            </h3>
-            <div class="logos-slider" style="mask-image: none;">
+            <h3 style="margin-top: 50px; margin-bottom: 20px; color: var(--industrial-gray);">Credenciados & Parceiros</h3>
+            <div class="logos-slider" style="mask-image: none; -webkit-mask-image: none;">
                 <div class="logos-track">
-                    <!-- WEG, Schneider, Daikin e LG -->
                     <span><img src="assets/image/weg.png" alt="WEG"></span>
                     <span><img src="assets/image/schneider.png" alt="Schneider Electric"></span>
                     <span><img src="assets/image/daikin.png" alt="Daikin"></span>
@@ -325,6 +567,7 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq">
         <div class="container">
             <div class="section-title">
@@ -334,64 +577,63 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h4>Vocês emitem laudos NR10 e NR12?</h4>
-                    <p>Sim, todos os nossos projetos e execuções acompanham a documentação técnica necessária e laudos
-                        de conformidade assinados por engenheiros responsáveis.</p>
+                    <p>Sim, todos os nossos projetos e execuções acompanham a documentação técnica necessária e laudos de conformidade assinados por engenheiros responsáveis.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Atendem chamados de emergência?</h4>
-                    <p>Sim, possuímos uma equipe dedicada para manutenções corretivas críticas em ambientes industriais
-                        e comerciais.</p>
+                    <p>Sim, possuímos uma equipe dedicada para manutenções corretivas críticas em ambientes industriais e comerciais.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Qual a periodicidade recomendada para manutenção de AC?</h4>
-                    <p>Depende do uso e do ambiente, mas para fins comerciais e industriais, recomendamos a higienização
-                        técnica e revisão semestral.</p>
+                    <p>Para fins comerciais e industriais, recomendamos higienização técnica e revisão semestral para garantir eficiência e qualidade do ar.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Atendem fora da região de São Paulo?</h4>
-                    <p>Atendemos prioritariamente a Grande São Paulo e interior, mas projetos de grande porte podem ser
-                        executados em todo o território nacional.</p>
+                    <p>Atendemos prioritariamente a Grande São Paulo e interior, mas projetos de grande porte podem ser executados em todo o território nacional.</p>
                 </div>
             </div>
         </div>
     </section>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo" style="margin-bottom: 20px;">
-                    <span style="color: white;">ENERGY</span>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <span style="color: white; font-size: 1.5rem; font-weight: 700;">ENERGY</span>
+                    </div>
+                    <p>Qualidade e segurança em conexões elétricas e climatização.</p>
                 </div>
-                <p>Qualidade e segurança em conexões elétricas e climatização.</p>
+                <div class="footer-col">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Quem Somos</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fab fa-whatsapp"></i> (11) 94702-0525</p>
+                    <p><i class="far fa-envelope"></i> adm@energymanutencao.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Atendimento em SP e Região</p>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Quem Somos</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#projects">Portfólio</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contato</h3>
-                <p><i class="fab fa-whatsapp"></i> (11) 94701-2417</p>
-                <p><i class="far fa-envelope"></i> adm@energymanutencao.com.br</p>
-                <p><i class="fas fa-map-marker-alt"></i> Atendimento em SP e Região</p>
+            <div class="footer-bottom">
+                &copy; 2026 ENERGY Soluções Elétricas. Todos os direitos reservados.
+                <br>Site desenvolvido por <a href="https://www.instagram.com/wordvirtua/" target="_blank">WordVirtua</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 ENERGY Soluções Elétricas. Todos os direitos reservados.
-            <br>Site desenvolvido pro <a href="https://www.instagram.com/wordvirtua/">WordVirtua</a>
-        </div>
-    </div>
     </footer>
 
+    <!-- BOTÕES FLUTUANTES -->
     <div class="emergency-float">
-
-        <a href="https://wa.me/5511947012417" target="_blank" class="whatsapp-float">
+        <a href="https://wa.me/5511947020525" target="_blank" class="whatsapp-float">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:+5511947012417" class="emergency-btn">
+        <a href="tel:+5511947020525" class="emergency-btn">
             <i class="fas fa-exclamation-triangle"></i>
             <span>Emergência / Manutenção Corretiva</span>
         </a>
