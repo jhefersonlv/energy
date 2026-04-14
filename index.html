@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENERGY - Soluções Elétricas e Ar-Condicionado</title>
     <link rel="icon" type="image/png" href="assets/image/favicon.png">
-    <meta name="description" content="Especialista em soluções elétricas e ar-condicionado industrial, predial e comercial. Confiança em cada conexão com conformidade NR10 e NR12.">
+    <meta name="description"
+        content="Especialista em soluções elétricas e ar-condicionado industrial, predial e comercial. Confiança em cada conexão com conformidade NR10 e NR12.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -72,14 +73,26 @@
                 </div>
             </div>
 
+            <!-- STEP REDIRECT: mensagem antes de ir para o marketplace -->
+            <div class="modal-step" id="stepRedirect">
+                <div class="modal-redirect-msg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Ótimo! Vamos te mostrar os melhores aparelhos disponíveis com instalação inclusa pela nossa
+                        equipe.</p>
+                    <small>Redirecionando para a loja...</small>
+                </div>
+            </div>
+
             <!-- STEP 1B: VOCÊ JÁ TEM UM APARELHO? (apenas Instalação de AC) -->
             <div class="modal-step" id="step1b">
                 <div class="has-ac-question">
                     <div class="has-ac-icon">
                         <i class="fas fa-snowflake"></i>
                     </div>
-                    <p class="modal-step-label" style="text-align:center; font-size:1.1rem;">Você já tem um aparelho de ar-condicionado?</p>
-                    <p class="modal-step-hint" style="text-align:center;">Isso nos ajuda a personalizar o seu orçamento.</p>
+                    <p class="modal-step-label" style="text-align:center; font-size:1.1rem;">Você já tem um aparelho de
+                        ar-condicionado?</p>
+                    <p class="modal-step-hint" style="text-align:center;">Isso nos ajuda a personalizar o seu orçamento.
+                    </p>
                     <div class="has-ac-options">
                         <button class="has-ac-btn" id="btnTemAC" data-has="sim">
                             <i class="fas fa-check-circle"></i>
@@ -239,7 +252,7 @@
             <div class="logo">
                 <img src="assets/image/logo.png" alt="Energy">
             </div>
-            <ul class="menu">
+            <ul class="menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Quem Somos</a></li>
                 <li><a href="#services">Serviços</a></li>
@@ -247,6 +260,11 @@
                 <li><a href="#contact">Contato</a></li>
                 <li><a href="#" class="nav-cta open-modal">Solicitar Serviço</a></li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
@@ -259,7 +277,8 @@
         </div>
         <div class="hero-content">
             <h1>CONFIANÇA EM CADA CONEXÃO</h1>
-            <p>Soluções em Elétrica e Ar-Condicionado para Indústrias, Comércios e Condomínios.</p>
+            <p>Do projeto à manutenção, com conformidade NR10/NR12 e documentação técnica em cada etapa.<br>Porque
+                instalação mal feita custa caro — e às vezes custa mais do que dinheiro.</p>
             <button class="btn btn-primary open-modal">Solicitar meu Serviço</button>
         </div>
     </section>
@@ -269,6 +288,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
+                    <!-- SUBSTITUA: troque por uma foto real da equipe ou de uma obra em andamento -->
                     <img src="assets/image/empresario.jpeg" alt="Equipe Técnica Energy">
                 </div>
                 <div class="about-text">
@@ -276,13 +296,36 @@
                         <h2>Quem Somos</h2>
                         <div class="divider" style="margin: 0;"></div>
                     </div>
-                    <h3>Excelência, Segurança e Atendimento Personalizado</h3>
-                    <p>A ENERGY é referência em soluções técnicas nas áreas Industrial, Predial e Comercial. Nosso
-                        compromisso é entregar máxima eficiência energética e operacional, garantindo a continuidade dos
-                        processos de nossos clientes.</p>
-                    <p>Contamos com uma equipe altamente qualificada e foco total em segurança do trabalho e
-                        conformidade normativa.</p>
+                    <h3>Você não pode se dar ao luxo de contratar o elétrico errado</h3>
+                    <p>Sabemos o que está em jogo: parada de produção, risco de multa de fiscalização, obra refeita e
+                        prejuízo que não volta. É por isso que cada projeto da ENERGY sai com documentação técnica
+                        completa, engenheiro responsável e equipe própria treinada. Sem terceirizado, sem improviso.</p>
+                    <p>Atendemos indústrias, comércios e condomínios na Grande São Paulo com conformidade total às
+                        normas NR10 e NR12 — do primeiro diagnóstico até a entrega do serviço com toda a documentação
+                        necessária.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR — AJUSTE OS NÚMEROS CONFORME A REALIDADE DA EMPRESA -->
+    <section class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Projetos Entregues</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Serviço Documentado</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Atendimento Emergencial</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">NR10</span>
+                <span class="stat-label">Equipe Certificada</span>
             </div>
         </div>
     </section>
@@ -296,19 +339,22 @@
             </div>
             <div class="culture-grid">
                 <div class="culture-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Missão</h3>
-                    <p>Prover soluções inovadoras, eficientes e personalizadas para conforto e segurança dos nossos clientes.</p>
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Serviço sempre documentado</h3>
+                    <p>Cada atendimento gera um relatório do que foi feito. Quando o serviço exige laudo técnico por
+                        norma — como NR10 e NR12 — ele é emitido com engenheiro responsável. Nada fica só no verbal.</p>
                 </div>
                 <div class="culture-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Visão</h3>
-                    <p>Ser referência em excelência, inovação e sustentabilidade no mercado de manutenção técnica.</p>
+                    <i class="fas fa-id-badge"></i>
+                    <h3>Técnico identificado</h3>
+                    <p>Todo profissional que entra na sua obra é da nossa equipe própria, com habilitação NR10 em dia.
+                        Você sabe quem está na sua planta.</p>
                 </div>
                 <div class="culture-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Valores</h3>
-                    <p>Deus, Família, Ética, Compromisso, Excelência, Inovação, Segurança e Colaboração.</p>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Garantia por escrito</h3>
+                    <p>Nossa garantia não é só promessa verbal — ela está no contrato. Se algo não ficar dentro do
+                        especificado, voltamos e resolvemos.</p>
                 </div>
             </div>
         </div>
@@ -325,50 +371,60 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
                     <h3>Elaboração de Projetos Elétricos e Ar-Condicionado</h3>
-                    <p>Desenvolvimento detalhado de sistemas elétricos e de climatização, focados em eficiência e economia.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <p>Desenvolvimento detalhado de sistemas elétricos e de climatização, focados em eficiência e
+                        economia.</p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Projetos e Execução para Adequação NR10 e NR12</h3>
                     <p>Compliance total e segurança do trabalho para painéis elétricos e máquinas industriais.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-tools"></i></div>
                     <h3>Manutenção Preventiva e Corretiva</h3>
                     <p>Garantia de continuidade operacional com intervenções técnicas precisas e rápidas.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Iluminação Interna e Externa</h3>
-                    <p>Projetos luminotécnicos de alta performance para valorização de ambientes e redução de custos.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <p>Projetos luminotécnicos de alta performance para valorização de ambientes e redução de custos.
+                    </p>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-building"></i></div>
                     <h3>Soluções Personalizadas por Obra</h3>
                     <p>Atendimento sob medida para necessidades específicas de cada empreendimento ou retrofitting.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-wind"></i></div>
                     <h3>Rede de Climatização de Ambiente</h3>
                     <p>Higienização, instalação e manutenção completa de sistemas de ar-condicionado e ventilação.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-industry"></i></div>
                     <h3>Iluminação Industrial</h3>
                     <p>Soluções robustas para grandes galpões, áreas fabris e ambientes de alta exigência.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-cogs"></i></div>
                     <h3>Execução e Montagem Personalizada</h3>
                     <p>Infraestrutura dedicada e montagem técnica rigorosa de acordo com seu projeto.</p>
-                    <button class="btn-service open-modal">Solicitar meu serviço <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-service open-modal">Solicitar meu serviço <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -385,22 +441,32 @@
                 <div class="diff-item">
                     <i class="fas fa-check-circle"></i>
                     <div class="diff-content">
-                        <h4>Atendimento Técnico Premium</h4>
-                        <p>Engenharia dedicada para cada conexão do seu projeto.</p>
+                        <h4>Atendimento Técnico com Engenharia</h4>
+                        <p>Cada projeto passa por análise de engenheiro — não é só mão de obra, é solução técnica com
+                            responsabilidade profissional.</p>
                     </div>
                 </div>
                 <div class="diff-item">
                     <i class="fas fa-check-circle"></i>
                     <div class="diff-content">
-                        <h4>Transparência Total</h4>
-                        <p>Relatórios detalhados de cada manutenção e projeto executado.</p>
+                        <h4>Relatório Detalhado de Cada Serviço</h4>
+                        <p>Você recebe um relatório completo de cada manutenção ou projeto executado. Nada "resolvido de
+                            boca".</p>
                     </div>
                 </div>
                 <div class="diff-item">
                     <i class="fas fa-check-circle"></i>
                     <div class="diff-content">
-                        <h4>Rapidez com Segurança</h4>
-                        <p>Cumprimento rigoroso de cronogramas sem abrir mão das normas.</p>
+                        <h4>Prazo Cumprido, Norma Respeitada</h4>
+                        <p>Cronograma rigoroso sem atalhos perigosos. Rapidez não significa pular a NR10.</p>
+                    </div>
+                </div>
+                <div class="diff-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="diff-content">
+                        <h4>Técnicos Habilitados NR10 e NR12</h4>
+                        <p>Nenhum técnico entra na sua obra sem a habilitação em dia. O certificado vem junto com o
+                            orçamento — antes mesmo do serviço começar.</p>
                     </div>
                 </div>
             </div>
@@ -416,21 +482,24 @@
             </div>
             <div class="industry-grid">
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800" alt="Industrial">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800"
+                        alt="Industrial">
                     <div class="industry-content">
                         <h3>Industrial</h3>
                         <p>Linhas de produção, painéis BT/MT e manutenção de infraestrutura crítica.</p>
                     </div>
                 </div>
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Comercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+                        alt="Comercial">
                     <div class="industry-content">
                         <h3>Comercial</h3>
                         <p>Sistemas de climatização central, iluminação de destaque e eficiência energética.</p>
                     </div>
                 </div>
                 <div class="industry-card">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="Predial">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
+                        alt="Predial">
                     <div class="industry-content">
                         <h3>Predial</h3>
                         <p>Manutenção técnica para condomínios, centros logísticos e edifícios corporativos.</p>
@@ -466,7 +535,7 @@
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <h4>Entrega</h4>
-                    <p>Testes, vistorias finais e entrega de documentação/laudos.</p>
+                    <p>Testes, vistorias finais e entrega do relatório técnico do serviço.</p>
                 </div>
             </div>
         </div>
@@ -477,8 +546,9 @@
         <div class="container">
             <div class="cta-banner-content">
                 <div>
-                    <h2>Pronto para resolver sua demanda?</h2>
-                    <p>Solicite seu orçamento em menos de 2 minutos direto pelo WhatsApp.</p>
+                    <h2>Qual é a sua demanda?</h2>
+                    <p>Descreva em 30 segundos e nossa equipe técnica te retorna com um orçamento detalhado — sem
+                        enrolação.</p>
                 </div>
                 <button class="btn btn-primary open-modal">
                     Solicitar meu Serviço <i class="fas fa-arrow-right"></i>
@@ -493,33 +563,79 @@
             <div class="section-title">
                 <h2>Projetos Realizados</h2>
                 <div class="divider"></div>
-                <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">Alguns dos trabalhos entregues com excelência técnica</p>
+                <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">Alguns dos trabalhos entregues com excelência
+                    técnica</p>
             </div>
             <div class="project-cards">
-                <div class="project-card">
-                    <div class="project-card-icon"><i class="fas fa-wind"></i></div>
-                    <h3>Higienização de Ar-Condicionado</h3>
-                    <p>Limpeza técnica completa de unidades evaporadoras e condensadoras em ambiente comercial, com emissão de laudo de conformidade.</p>
-                    <span class="project-tag">Climatização</span>
+
+                <!-- PROJETO 1 — SUBSTITUA o placeholder pela foto real do projeto -->
+                <div class="project-card project-card-photo">
+                    <div class="project-photo-slot">
+                        <img src="assets/image/projeto-higienizacao.jpeg" alt="Higienização de Ar-Condicionado">
+                        <div class="project-photo-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Adicione a foto do projeto aqui</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-tag">Climatização</span>
+                        <h3>Higienização de Ar-Condicionado</h3>
+                        <p>Limpeza técnica completa de evaporadoras e condensadoras em ambiente comercial, com relatório
+                            do serviço executado.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Montagem de Painel Elétrico Industrial</h3>
-                    <p>Projeto e montagem de painel de comando com adequação NR12 para indústria de grande porte, garantindo segurança total aos operadores.</p>
-                    <span class="project-tag">NR12 · Industrial</span>
+
+                <!-- PROJETO 2 — SUBSTITUA o placeholder pela foto real do projeto -->
+                <div class="project-card project-card-photo">
+                    <div class="project-photo-slot">
+                        <img src="assets/image/projeto-painel-nr12.jpeg" alt="Painel Elétrico NR12">
+                        <div class="project-photo-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Adicione a foto do projeto aqui</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-tag">NR12 · Industrial</span>
+                        <h3>Montagem de Painel Elétrico Industrial</h3>
+                        <p>Projeto e montagem de painel de comando com adequação NR12 para indústria de grande porte,
+                            garantindo segurança total aos operadores.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-card-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Retrofit de Iluminação Comercial</h3>
-                    <p>Substituição completa do sistema de iluminação de loja por LED de alta eficiência, reduzindo o consumo energético em mais de 40%.</p>
-                    <span class="project-tag">Eficiência Energética</span>
+
+                <!-- PROJETO 3 — SUBSTITUA o placeholder pela foto real do projeto -->
+                <div class="project-card project-card-photo">
+                    <div class="project-photo-slot">
+                        <!-- <img src="assets/image/projeto-retrofit-led.jpg" alt="Retrofit Iluminação LED"> -->
+                        <div class="project-photo-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Adicione a foto do projeto aqui</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-tag">Eficiência Energética</span>
+                        <h3>Retrofit de Iluminação Comercial</h3>
+                        <p>Substituição completa do sistema de iluminação por LED de alta eficiência, com redução de
+                            mais de 40% no consumo energético.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Adequação NR10 — Subestação</h3>
-                    <p>Levantamento de riscos e adequação completa de subestação de média tensão com emissão de laudo técnico assinado por engenheiro.</p>
-                    <span class="project-tag">NR10 · Segurança</span>
+
+                <!-- PROJETO 4 — SUBSTITUA o placeholder pela foto real do projeto -->
+                <div class="project-card project-card-photo">
+                    <div class="project-photo-slot">
+                        <!-- <img src="assets/image/projeto-nr10-subestacao.jpg" alt="Adequação NR10 Subestação"> -->
+                        <div class="project-photo-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Adicione a foto do projeto aqui</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-tag">NR10 · Segurança</span>
+                        <h3>Adequação NR10 — Subestação</h3>
+                        <p>Levantamento de riscos e adequação completa de subestação de média tensão com laudo técnico
+                            assinado por engenheiro responsável.</p>
+                    </div>
                 </div>
+
             </div>
             <div style="text-align: center; margin-top: 50px;">
                 <button class="btn btn-primary open-modal">
@@ -551,7 +667,8 @@
                     <span><img src="assets/image/toth.png" alt="TOTH Engenharia"></span>
                 </div>
             </div>
-            <h3 style="margin-top: 50px; margin-bottom: 20px; color: var(--industrial-gray);">Credenciados & Parceiros</h3>
+            <h3 style="margin-top: 50px; margin-bottom: 20px; color: var(--industrial-gray);">Credenciados & Parceiros
+            </h3>
             <div class="logos-slider" style="mask-image: none; -webkit-mask-image: none;">
                 <div class="logos-track">
                     <span><img src="assets/image/weg.png" alt="WEG"></span>
@@ -577,19 +694,24 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h4>Vocês emitem laudos NR10 e NR12?</h4>
-                    <p>Sim, todos os nossos projetos e execuções acompanham a documentação técnica necessária e laudos de conformidade assinados por engenheiros responsáveis.</p>
+                    <p>Sim. Serviços de adequação NR10 e NR12 são acompanhados do laudo técnico assinado por engenheiro
+                        responsável, conforme exigência normativa. Para os demais serviços, entregamos o relatório
+                        técnico do que foi executado.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Atendem chamados de emergência?</h4>
-                    <p>Sim, possuímos uma equipe dedicada para manutenções corretivas críticas em ambientes industriais e comerciais.</p>
+                    <p>Sim, possuímos uma equipe dedicada para manutenções corretivas críticas em ambientes industriais
+                        e comerciais.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Qual a periodicidade recomendada para manutenção de AC?</h4>
-                    <p>Para fins comerciais e industriais, recomendamos higienização técnica e revisão semestral para garantir eficiência e qualidade do ar.</p>
+                    <p>Para fins comerciais e industriais, recomendamos higienização técnica e revisão semestral para
+                        garantir eficiência e qualidade do ar.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Atendem fora da região de São Paulo?</h4>
-                    <p>Atendemos prioritariamente a Grande São Paulo e interior, mas projetos de grande porte podem ser executados em todo o território nacional.</p>
+                    <p>Atendemos prioritariamente a Grande São Paulo e interior, mas projetos de grande porte podem ser
+                        executados em todo o território nacional.</p>
                 </div>
             </div>
         </div>

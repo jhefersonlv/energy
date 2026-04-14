@@ -198,13 +198,22 @@ function initModal() {
     });
 
     document.getElementById('btnNaoTemAC').addEventListener('click', () => {
-        // Usuário não tem aparelho → redireciona para marketplace
+        // Usuário não tem aparelho → mostra mensagem de transição e redireciona para marketplace
         document.querySelectorAll('.has-ac-btn').forEach(b => b.classList.remove('selected'));
         document.getElementById('btnNaoTemAC').classList.add('selected');
         setTimeout(() => {
-            closeModal();
-            window.location.href = 'comprar-ar.html';
-        }, 400);
+            // Esconde step 1b e mostra mensagem de redirecionamento
+            document.querySelectorAll('.modal-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('stepRedirect').classList.add('active');
+            // Esconde botões de navegação durante o redirect
+            btnVoltar.style.display = 'none';
+            btnProximo.style.display = 'none';
+            btnEnviar.style.display = 'none';
+            // Redireciona após a mensagem ser lida
+            setTimeout(() => {
+                window.location.href = 'comprar-ar.html';
+            }, 1800);
+        }, 300);
     });
 
     // ── Bind: cards de marca (step 2) ────────────────────
@@ -315,6 +324,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('navMenu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+            document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Fechar menu ao clicar em qualquer link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
